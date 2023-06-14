@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> 
+<!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+<link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">  
+    <link rel="stylesheet" href="css/screen3.css">
+    <title>Document</title>
+</head>
+<body onload="readData()">
+    <h1>People who participated survay</h1> 
+    <div class="container">
+ 
+ <p>Total number of survays   <span id=total></span></p>
+ <p>Avarage age               <span id="avgAge"></span></p>
+ <p>Oldest person who participated in survay   <span id="old"></span></p>
+ <p>Youngest person who particapated in survay   <span id="young"></span></p>
+ 
+    </div>
+   <div class="container2">
+    <p>Percentage of people who like Pizza   <span id="avgPizza"></span></p>
+    <p>Percentage of people who like Pasta   <span id="avgPasta"></span></p>
+    <p>Percentage of people who like Pap and wors   <span id="avgPap"></span></p>
+
+
+</div>
+<div class="container3">
+    <p>People like to eat out  <span id="avgEat"></span></p>
+    <p> People like to watch movies <span id="avgMovies"></span></p>
+    <p>People like to watch TV  <span id="avgTv"></span></p>
+    <p>People like to listen to radio <span id="avgRadio"></span></p>
+
+   
+</div>
+
+<div class="button">
+    <button onclick="redirect()">ok</button>
+</div>
+     <!-- JavaScript Bundle with Popper -->
+     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-storage.js"></script>
+     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-analytics.js"></script>
+     <script>
+ 
+ const firebaseConfig = {
+  apiKey: "AIzaSyD6-_D6tvt8fP184aaOiOEaMhfNOOwHrdU",
+  authDomain: "survay-6194a.firebaseapp.com",
+  projectId: "survay-6194a",
+  storageBucket: "survay-6194a.appspot.com",
+  messagingSenderId: "264728741009",
+  appId: "1:264728741009:web:eb187dc2bc5651506a6b30",
+  measurementId: "G-116RDCMJEB"
+};
+ 
+         // Initialize Firebase
+         firebase.initializeApp(firebaseConfig);
+         const auth = firebase.auth();
+         const db = firebase.firestore();
+         db.settings("timestampsInSnapshots:true")
+         firebase.analytics();
+     </script>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+     integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+     crossorigin="anonymous"></script>
+
+<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+      $('.main-carousel').flickity({
+  // options
+  cellAlign: 'left',
+  contain: true,
+  wrapAround:true,
+  freeScroll:true,
+  autoPlay:true
+});
+    </script>
+
+<script src="https://kit.fontawesome.com/991fa081b6.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="javascript/survay.js"></script>
+
+</body>
+</html>
